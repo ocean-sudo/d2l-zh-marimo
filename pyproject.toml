@@ -1,0 +1,28 @@
+[project]
+name = "d2l-zh-marimo"
+version = "2.0.0"
+description = "《动手学深度学习》(Dive into Deep Learning) 中文版 — marimo notebook 版本"
+authors = [
+    { name = "Aston Zhang" },
+    { name = "Zachary C. Lipton" },
+    { name = "Mu Li" },
+    { name = "Alexander J. Smola" },
+]
+license = { text = "CC-BY-SA-4.0" }
+readme = "README.md"
+requires-python = ">=3.10"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.marimo.runtime]
+# 默认关闭自动执行，改为 lazy 模式（标记 stale 但不自动跑）
+# 适合按章节学习时手动控制执行顺序
+auto_reload = "lazy"
+
+[tool.marimo.display]
+theme = "dark"
+
+[dependency-groups]
+dev = ["marimo>=0.23.0"]
